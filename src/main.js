@@ -4,8 +4,11 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import VueFullPage from 'vue-fullpage.js'
+import axios from 'axios'
 
 Vue.config.productionTip = false
+
+Vue.prototype.$http = axios;
 
 Vue.use(VueFullPage);
 

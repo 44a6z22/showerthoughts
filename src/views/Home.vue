@@ -1,8 +1,10 @@
 <template>
   <div class="home">
-      <full-page ref="fullpage" :options="options" id="fullpage">
+      
+        <Loader v-if="isLoading" />
+      <full-page ref="fullpage" :options="options" id="fullpage" v-else>
         
-        <Card v-for="i in 10" key="i" :thought='i'/>
+        <Card v-for="thought in thoughts" :key="thought.data.id" :thought='thought'/>
 
       </full-page>
   </div>
@@ -11,11 +13,14 @@
 <script>
 // @ is an alias to /src
 import Card from '@/components/Card.vue'
+import Loader from '@/components/Loader.vue'
 
 export default {
   name: 'Home',
    data() {
     return {
+      isLoading: true,
+      thoughts: [], 
       options: {
         licenseKey: 'YOUR_KEY_HEERE',
         menu: '#menu',
@@ -26,7 +31,31 @@ export default {
   },
   components: {
     // HelloWorld
-    Card
+    Card, 
+    Loader
   }, 
+  methods:{
+    getShowerThoughts: function () {
+      
+      this.$http.get("https://www.reddit.com/r/Showerthoughts.json?limit=20")
+        .then( 
+          response => {
+            this.thoughts = response.data.data.children;
+            this.thoughts.shift();
+            this.thoughts.shift();
+            console.log(this.thoughts)
+            this.isLoading = false; 
+          }
+        )
+        .catch(
+          err => {
+            console.error(err);
+          }
+        );
+    }
+  },
+  created: function(){
+    this.getShowerThoughts();
+  }
 }
 </script>
