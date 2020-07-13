@@ -2,8 +2,8 @@
     <div class="section">
         
         <div class="data">
-            <img src="https://styles.redditmedia.com/t5_2szyo/styles/communityIcon_x3ag97t82z251.png?width=256&s=33531dceba6466953aadef3073f36cfc2e267175" alt="shower thoughts logo .">
-            <h3 class="author"> Author : {{thought.author_fullname}} </h3>
+            <img class="logo" src="https://styles.redditmedia.com/t5_2szyo/styles/communityIcon_x3ag97t82z251.png?width=256&s=33531dceba6466953aadef3073f36cfc2e267175" alt="shower thoughts logo .">
+            <h3 class="author"> Author : {{thought.author}} </h3>
             <p class="quote">
                “ {{thought.title}} ”
             </p>
@@ -62,5 +62,40 @@ export default {
     .data .awards{
         display: flex;
         justify-content: center;
+    }
+
+
+
+    @media only screen and (max-width: 1000px){
+        .logo{
+            height: 80px;
+            padding: 0;
+            margin: 0;
+        }
+        .data{
+            padding: 3em 0em;
+            font-family: 'Montserrat', sans-serif;
+            width: 100%;
+            color:azure;
+            /* padding: 2em 0em; */
+        }
+        .data *{
+            margin: .5em;
+        }
+        .data .quote{
+            font-size: 1em;
+            
+            margin: 0em 2em;
+        }
+        .data .rate{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .data .awards{
+            display: flex;
+            justify-content: center;
+        }
+        
     }
 </style>

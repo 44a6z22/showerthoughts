@@ -16,6 +16,7 @@ Vue.use(VueFullPage);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
+
 new Vue({
   router,
   store,
