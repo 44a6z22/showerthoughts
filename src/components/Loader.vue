@@ -1,15 +1,26 @@
 <template>
-  <div>
-      <!-- <div>
-        <span>
-          Getting ShowerThoughs 
-        </span>
-      </div> -->
+  <div class="loader-container">
+     
       <div class="loader">Loading...</div>
+       <div>
+        <span>
+          Getting Shower Thoughs 
+        </span>
+      </div>
   </div>
 </template>
 
 <style scoped>
+
+.loader-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding-top: 10em;
+}
+
 .loader,
 .loader:before,
 .loader:after {
@@ -22,7 +33,7 @@
   animation: load7 1.8s infinite ease-in-out;
 }
 .loader {
-  color: #ffffff;
+  color: #000000;
   font-size: 10px;
   margin: 80px auto;
   position: relative;
