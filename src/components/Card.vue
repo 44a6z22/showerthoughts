@@ -40,19 +40,28 @@ export default {
 <style  scoped>
     
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
-    
+    .logo{
+        height: 120px;
+        padding: 0;
+        margin: 0;
+        border: .4em solid white; 
+        border-radius: 200px;
+    }
     .data{
         font-family: 'Montserrat', sans-serif;
-        width: 100%;
         color:azure;
-        padding: 4em 0em;
+        height: 100%;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .data *{
         margin: 1em;
     }
     .data .quote{
-        font-size: 3em;
-        
+         text-align: center;
+        font-size: 2em;
         margin: 0em 4em;
     }
     .data .rate{
@@ -62,40 +71,34 @@ export default {
     .data .awards{
         display: flex;
         justify-content: center;
+        align-items: center;
     }
 
 
 
-    @media only screen and (max-width: 1000px){
+    @media only screen and (max-width: 720px){
         .logo{
             height: 80px;
-            padding: 0;
-            margin: 0;
         }
         .data{
-            padding: 3em 0em;
-            font-family: 'Montserrat', sans-serif;
-            width: 100%;
-            color:azure;
-            /* padding: 2em 0em; */
+            padding: 3em 0em;   
         }
         .data *{
             margin: .5em;
         }
         .data .quote{
-            font-size: 1em;
-            
-            margin: 0em 2em;
+            font-size: 1.5em;
+            margin: 1.5em 2em;
         }
         .data .rate{
-            display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: center;
         }
-        .data .awards{
-            display: flex;
-            justify-content: center;
+    }
+    @media only screen and (min-width: 720px) and (max-width: 1024px){
+         .data .quote{
+            font-size: 2.3em;
+            margin: 1em 2em;
         }
-        
     }
 </style>

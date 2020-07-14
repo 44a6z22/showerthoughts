@@ -3,7 +3,7 @@
       
       <Loader v-if="isLoading" />
       <full-page ref="fullpage" :options="options" id="fullpage" v-else>
-        
+        <Welcome />
         <Card v-for="thought in thoughts" :key="thought.data.id" :thought='thought.data'/>
 
       </full-page>
@@ -12,8 +12,9 @@
 
 <script>
 // @ is an alias to /src
-import Card from '@/components/Card.vue'
-import Loader from '@/components/Loader.vue'
+import Card from '@/components/Card.vue';
+import Loader from '@/components/Loader.vue';
+import Welcome from '@/components/Welcome.vue';
 
 export default {
   name: 'Home',
@@ -24,6 +25,7 @@ export default {
       options: {
         menu: '#menu',
         sectionsColor: [
+          '#004d40',
           '#4B7F52', 
           '#0A2463', 
           '#CCDDB7', 
@@ -49,7 +51,7 @@ export default {
     }
   },
   components: {
-    // HelloWorld
+    Welcome,
     Card, 
     Loader
   }, 

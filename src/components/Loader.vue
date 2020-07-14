@@ -14,11 +14,11 @@
 
 .loader-container{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   height: 100%;
   width: 100%;
-  padding-top: 10em;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
 }
 
 .loader,
